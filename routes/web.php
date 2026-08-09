@@ -9,3 +9,6 @@ Route::get('/', function () {
 
 route::get('/pacientes', 
 [App\Http\Controllers\PacientesController::class, 'index'])->name('Pacientes.index');
+
+route::get('/pacientes/show', 
+[App\Http\Controllers\PacientesController::class, 'show'])->name('Pacientes.show');
