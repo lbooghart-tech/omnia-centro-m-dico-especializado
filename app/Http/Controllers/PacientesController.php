@@ -7,4 +7,8 @@ class PacientesController extends Controller
     {
         return view ('Pacientes.index');
     }
+    public function show()
+    {
+        return view('pacientes.show');
+    }
 }
