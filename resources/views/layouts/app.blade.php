@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title', 'OmniCentroMedico')</title>
+    <title>@yield('title', 'OmniaCentroMedico')</title>
 </head>
 <body>
     <header>
-        <h1>OmniCentroMedico</h1>
+        <h1>Omnia Centro Medico</h1>
     </header>
 
     <main>
@@ -14,7 +14,7 @@
     </main>
 
     <footer>
-        <p>OmniCentroMedico &copy; {{ date('Y') }}</p>
+        <p>OmniaCentroMedico &copy; {{ date('Y') }}</p>
     </footer>
 </body>
 </html>
