@@ -12,3 +12,9 @@ route::get('/pacientes',
 
 route::get('/pacientes/show', 
 [App\Http\Controllers\PacientesController::class, 'show'])->name('Pacientes.show');
+
+route::get('/pacientes/create',
+[App\Http\Controllers\PacientesController::class, 'create'])->name('Pacientes.create');
+
+Route::post('/pacientes/store',
+[App\Http\Controllers\PacientesController::class, 'store'])->name('Pacientes.store');
