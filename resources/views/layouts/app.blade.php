@@ -1,3 +1,4 @@
+{{-- resources/views/layouts/app.blade.php --}}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,33 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@yield('title', 'OmniaCentroMedico')</title>
-    <!-- Agrega aquí tus enlaces a CSS y scripts de JavaScript -->
-@if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-@else
-    <style>
-        /* Estilos CSS para el modo de producción */
-    </style>
-    
-@endif
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clinica: {
+                50: '#F5F7F8',
+                200: '#D7E0E4',
+                400: '#7FBAC6',
+                600: '#2E7E95',
+                900: '#1B3A44',
+              }
+            }
+          }
+        }
+      }
+    </script>
 </head>
 <body>
     <header>
-      <!----------menu------------------------------------------>
-<nav class="bg-clinica-600 text-white p-4">
-    <div class="container mx-auto">
-        <ul class="flex space-x-4">
-            <li>
-    <a href="{{ url('/') }}" class="navbar-brand flex items-center gap-2">
-        <img src="{{ asset('favicon.png') }}" alt="Omnia Centro Médico" class="h-10 w-auto">
-    </a>
-</li>
-            <li><a href="{{ route('Pacientes.index') }}" class="hover:text-clinica-200">Pacientes</a></li>
-        </ul>
-    </div>
-</nav>
-        
+        {{-- menu --}}
+        <nav class="bg-clinica-600 text-white p-4">
+            <div class="container mx-auto">
+                <ul class="flex items-center space-x-4">
+                    <li>
+                        <a href="{{ url('/') }}" class="navbar-brand flex items-center gap-2">
+                            <img src="{{ asset('favicon.png') }}" alt="Omnia Centro Médico" class="h-10 w-auto">
+                        </a>
+                    </li>
+                    <li><a href="{{ route('Pacientes.index') }}" class="hover:text-clinica-200">Pacientes</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -43,22 +52,4 @@
         <p>OmniaCentroMedico &copy; {{ date('Y') }}</p>
     </footer>
 </body>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          clinica: {
-            50: '#F5F7F8',
-            200: '#D7E0E4',
-            400: '#7FBAC6',
-            600: '#2E7E95',
-            900: '#1B3A44',
-          }
-        }
-      }
-    }
-  }
-</script>
 </html>
