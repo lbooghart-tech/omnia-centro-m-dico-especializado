@@ -21,9 +21,37 @@
         <input type="text" name="nombre" id="nombre" style="margin-bottom: 10px;">
         @error('nombre')<div style="color: red;">{{ $message }}</div>@enderror
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" id="apellido" style="margin-bottom: 10px;">
-        @error('apellido')<div style="color: red;">{{ $message }}</div>@enderror
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" style="margin-bottom: 10px;">
+        @error('fecha_nacimiento')<div style="color: red;">{{ $message }}</div>@enderror    
+
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo" style="margin-bottom: 10px;">
+            <option value="">Seleccione</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+        </select>
+        @error('sexo')<div style="color: red;">{{ $message }}</div>@enderror 
+
+
+        <label for="tipo_sangre">Tipo de Sangre:</label>
+        <select name="tipo_sangre" id="tipo_sangre" style="margin-bottom: 10px;">
+            <option value="">Seleccione</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option> 
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+        @error('tipo_sangre')<div style="color: red;">{{ $message }}</div>@enderror
+
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" style="margin-bottom: 10px;">
+        @error('email')<div style="color: red;">{{ $message }}</div>@enderror           
 
         <label for="telefono">Teléfono:</label>
         <input type="text" name="telefono" id="telefono" style="margin-bottom: 10px;">
