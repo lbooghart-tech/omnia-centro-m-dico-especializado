@@ -5,10 +5,10 @@ use App\Models\Paciente;
 
 class PacientesController extends Controller
 {
-    public function index()
+   /* public function index()
     {
         return view ('Pacientes.index');
-    }
+    }**/
     public function show()
     {
         return view('pacientes.show');
@@ -17,6 +17,12 @@ class PacientesController extends Controller
 {
     return view('Pacientes.create');
 }
+    public function index()
+    {
+        $pacientes = Paciente::orderBy('nombre')->get();
+
+        return view('Pacientes.index', compact('pacientes'));
+    }   
 
 public function store(Request $request)
 {
@@ -24,7 +30,7 @@ public function store(Request $request)
         'nombre' => 'required|string|max:255| min:3',
         'fecha_nacimiento' => 'required|date|before:today',
         'sexo' => 'required|in:M,F',
-        'tipo_sangre' => 'required|in:A+,A-,B+,B-,AB+,AB-,O+,O-',
+        'tipo_sangre' => 'nullable|in:A+,A-,B+,B-,AB+,AB-,O+,O-',
         'email' => 'required|email|unique:pacientes,email',
         'telefono' => 'required|string|max:20| min:8',
         'direccion' => 'required|string|max:255| min:10',

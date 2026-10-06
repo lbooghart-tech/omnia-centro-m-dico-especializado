@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->date('fecha_nacimiento');
             $table->enum('sexo', ['M', 'F']);
-            $table->enum('tipo_sangre', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']);
+            $table->enum('tipo_sangre', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])->nullable();
             $table->string('email')->unique();
             $table->string('telefono', 20);
             $table->string('direccion');
