@@ -19,6 +19,7 @@
             <th class="py-2 px-4 border-b">Email</th>
             <th class="py-2 px-4 border-b">Teléfono</th>
             <th class="py-2 px-4 border-b">Dirección</th>
+            <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
@@ -32,6 +33,12 @@
                 <td class="py-2 px-4 border-b">{{ $paciente->email }}</td>
                 <td class="py-2 px-4 border-b">{{ $paciente->telefono }}</td>
                 <td class="py-2 px-4 border-b">{{ $paciente->direccion }}</td>
+                <td>
+                <a href="{{ route('Pacientes.edit', $paciente->id) }}"
+                class="bg-clinica-400 hover:bg-clinica-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+                Editar
+                </a>
+                </td>
             </tr>
         @endforeach
         </tbody>
