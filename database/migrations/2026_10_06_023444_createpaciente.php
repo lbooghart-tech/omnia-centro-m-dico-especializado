@@ -13,6 +13,7 @@ return new class extends Migration
     {
        Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
+            $table->string('dpi', 13)->unique();
             $table->string('nombre');
             $table->date('fecha_nacimiento');
             $table->enum('sexo', ['M', 'F']);

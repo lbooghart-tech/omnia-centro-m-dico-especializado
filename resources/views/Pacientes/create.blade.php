@@ -17,6 +17,12 @@
           style="display: flex; flex-direction: column; width: 300px; margin: auto; background-color: #d7e0e4; padding: 20px;"
           method="POST" action="{{ route('Pacientes.store') }}">
         @csrf
+        <label for="dpi">DPI:</label>
+<input type="text" name="dpi" id="dpi" value="{{ old('dpi') }}"
+       inputmode="numeric" maxlength="13" pattern="[0-9]{13}"
+       style="margin-bottom: 10px;">
+        @error('dpi')<div style="color: red;">{{ $message }}</div>@enderror
+        
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" style="margin-bottom: 10px;">
         @error('nombre')<div style="color: red;">{{ $message }}</div>@enderror
