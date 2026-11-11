@@ -12,6 +12,7 @@
         <thead>
         <tr>
             <th class="py-2 px-4 border-b">Nombre</th>
+            <th class="py-2 px-4 border-b">DPI</th>
             <th class="py-2 px-4 border-b">Fecha de Nacimiento</th>
             <th class="py-2 px-4 border-b">Sexo</th>
             <th class="py-2 px-4 border-b">Tipo de Sangre</th>
@@ -24,6 +25,7 @@
         @foreach($pacientes as $paciente)
             <tr>
                 <td class="py-2 px-4 border-b">{{ $paciente->nombre }}</td>
+                <td class="py-2 px-4 border-b">{{ $paciente->dpi }}</td>
                 <td class="py-2 px-4 border-b">{{ $paciente->fecha_nacimiento }}</td>
                 <td class="py-2 px-4 border-b">{{ $paciente->sexo }}</td>
                 <td class="py-2 px-4 border-b">{{ $paciente->tipo_sangre ?? 'N/A' }}</td>

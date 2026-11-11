@@ -28,6 +28,7 @@ public function store(Request $request)
 {
     $validateData = $request->validate([
         'nombre' => 'required|string|max:255| min:3',
+        'dpi' => ['required', 'integer', 'digits:13', 'unique:pacientes,dpi'],
         'fecha_nacimiento' => 'required|date|before:today',
         'sexo' => 'required|in:M,F',
         'tipo_sangre' => 'nullable|in:A+,A-,B+,B-,AB+,AB-,O+,O-',
@@ -38,6 +39,7 @@ public function store(Request $request)
 
     $paciente = new Paciente();
     $paciente->nombre = $validateData['nombre'];
+    $paciente->dpi = $validateData['dpi'];
     $paciente->fecha_nacimiento = $validateData['fecha_nacimiento'];
     $paciente->sexo = $validateData['sexo'];
     $paciente->tipo_sangre = $validateData['tipo_sangre'];
