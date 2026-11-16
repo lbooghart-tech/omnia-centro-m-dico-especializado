@@ -3,6 +3,7 @@
 use App\Http\Controllers\PacientesController;
 use App\Http\Controllers\DoctoresController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CitasController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +20,9 @@ Route::get('/doctores/create', [DoctoresController::class, 'create'])->name('Doc
 Route::post('/doctores/store', [DoctoresController::class, 'store'])->name('Doctores.store');
 Route::get('/doctores/{id}/edit', [DoctoresController::class, 'edit'])->name('Doctores.edit');
 Route::put('/doctores/{id}', [DoctoresController::class, 'update'])->name('Doctores.update');
+Route::get('/citas', [CitasController::class, 'index'])->name('Citas.index');
+Route::get('/citas/create', [CitasController::class, 'create'])->name('Citas.create');
+Route::post('/citas/store', [CitasController::class, 'store'])->name('Citas.store');
+Route::get('/citas/disponibilidad', [CitasController::class, 'disponibilidad'])->name('Citas.disponibilidad');
+Route::get('/citas/paciente/{dpi}', [CitasController::class, 'buscarPaciente'])->name('Citas.paciente');
+Route::delete('/citas/{id}', [CitasController::class, 'destroy'])->name('Citas.destroy');

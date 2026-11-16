@@ -40,6 +40,7 @@
                     </li>
                    <li><a href="{{ route('Pacientes.index') }}" class="hover:text-clinica-200">Pacientes</a></li>
                     <li><a href="{{ route('Doctores.index') }}" class="hover:text-clinica-200">Doctores</a></li>
+                    <li><a href="{{ route('Citas.index') }}" class="hover:text-clinica-200">Citas</a></li>
                     <li><a href="#" class="hover:text-clinica-200">Citas</a></li>
                 </ul>
             </div>
